@@ -1,12 +1,12 @@
 # Binaries for programs and plugins
 main
-tt
 *.exe
 *.exe~
 *.so
 *.dylib
 *.dll
 
+build/
 config/
 
 # Ignore common editor/system specific metadata
