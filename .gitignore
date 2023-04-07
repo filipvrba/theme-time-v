@@ -1,0 +1,23 @@
+# Binaries for programs and plugins
+main
+tt
+*.exe
+*.exe~
+*.so
+*.dylib
+*.dll
+
+config/
+
+# Ignore common editor/system specific metadata
+.DS_Store
+.idea/
+.vscode/
+*.iml
+
+# ENV
+.env
+
+# vweb and database
+*.db
+*.js
