@@ -4,13 +4,13 @@ import src.op
 
 pub struct Arguments {
 pub mut:
-	start f32
-	end f32
+	start int = -1
+	end int = -1
 	command string
 }
 
 pub fn get_arguments() Arguments {
-	mut arguments := Arguments{start: -1, end: -1}
+	mut arguments := Arguments{}
 	mut ref_args := &arguments
 
 	mut option_parser := op.OptionParser{}
@@ -22,10 +22,10 @@ pub fn get_arguments() Arguments {
 		exit(0)
 	})
 	option_parser.on("--set-start NUMBER", "", "Set a 'start' value.", fn [mut ref_args] (number string) {
-		ref_args.start = number.f32()
+		ref_args.start = number.int()
 	})
 	option_parser.on("--set-end NUMBER", "", "Set a 'end' value.", fn [mut ref_args] (number string) {
-		ref_args.end = number.f32()
+		ref_args.end = number.int()
 	})
 	option_parser.on("--set-command COMMAND", "", "Set a 'command' value.", fn [mut ref_args] (command string) {
 		ref_args.command = command
@@ -33,4 +33,8 @@ pub fn get_arguments() Arguments {
 	option_parser.init()
 
 	return arguments
+}
+
+pub fn (a Arguments) is_empty() bool {
+	return a == Arguments{}
 }
