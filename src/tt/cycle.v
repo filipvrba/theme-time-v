@@ -4,7 +4,7 @@ import src.jp
 import time
 
 const(
-	modes = [
+	themes = [
 		'light',
 		'dark'
 	]
@@ -24,7 +24,7 @@ pub fn (mut c Cycle) day_ident() ! {
 			if c.is_activate(2) {
 				c.bitwise &= ~2
 			}
-			return error(modes[0])  // call block
+			return error(themes[0])  // call block
 		}
 	}
 	else if c.is_night() {
@@ -34,7 +34,7 @@ pub fn (mut c Cycle) day_ident() ! {
 			if c.is_activate(1) {
 				c.bitwise &= ~1
 			}
-			return error(modes[1])  // call block
+			return error(themes[1])  // call block
 		}
 	}
 }

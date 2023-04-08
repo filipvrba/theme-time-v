@@ -14,14 +14,20 @@ struct App {
 mut:
 	arguments tt.Arguments
 	storage jp.JsonParser
+	pid tt.PID
 }
 
 fn main() {
 	mut app := App{}
 	app.arguments = tt.get_arguments()
 	app.storage = tt.get_storage(app.arguments)
-	
-	app.loop(1000)
+
+	if !tt.PID{app_name}.is_running() {
+		app.loop(1000)
+	}
+	else {
+		exit(0)
+	}
 }
 
 fn (mut a App) loop(sleep int) {
