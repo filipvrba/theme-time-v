@@ -10,9 +10,9 @@ pub mut:
 }
 
 pub fn get_storage() Storage {
-	mut json_parser := jp.JsonParser{ path: 'config/storage.json' }
-	json_parser.on('start', 7.0.str())
-	json_parser.on('end', 19.0.str())
+	mut json_parser := jp.JsonParser{ path: '~/.config/theme-time/storage.json' }
+	json_parser.on('start', 7.str())
+	json_parser.on('end', 19.str())
 	json_parser.on('command', 'theme')
 
 	return Storage{json_parser: json_parser}

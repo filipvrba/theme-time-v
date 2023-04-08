@@ -1,3 +1,3 @@
 #!/bin/bash
 
-v -o build/tt .
+v -prod -o build/tt .
