@@ -4,6 +4,7 @@ import src.op
 
 pub struct Arguments {
 pub mut:
+	is_gs bool
 	start int = -1
 	end int = -1
 	command string
@@ -20,6 +21,9 @@ pub fn get_arguments() Arguments {
 	option_parser.on("-h", "--help", "Show help", fn [mut ref_op] (_ string) {
 		print(ref_op.help_str())
 		exit(0)
+	})
+	option_parser.on("-gs", "--get-storage", "Shows the application configuration data.", fn [mut ref_args] (_ string) {
+		ref_args.is_gs = true
 	})
 	option_parser.on("--set-start NUMBER", "", "Set a 'start' value.", fn [mut ref_args] (number string) {
 		ref_args.start = number.int()
