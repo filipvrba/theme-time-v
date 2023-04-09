@@ -1,7 +1,7 @@
 module main
 
 import src.tt
-import src.rb
+import rb
 import time
 import os
 

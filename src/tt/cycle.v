@@ -1,6 +1,6 @@
 module tt
 
-import src.jp
+import jp
 import time
 
 const(

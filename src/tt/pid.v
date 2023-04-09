@@ -1,7 +1,7 @@
 module tt
 
 import os
-import src.rb
+import rb
 
 pub struct PID {
 	app string

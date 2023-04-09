@@ -1,6 +1,6 @@
 module tt
 
-import src.op
+import op
 
 pub struct Arguments {
 pub mut:

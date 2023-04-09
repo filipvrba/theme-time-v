@@ -1,7 +1,7 @@
 module tt
 
-import src.rb
-import src.jp
+import rb
+import jp
 
 pub struct Storage {
 pub mut:
